@@ -1,0 +1,377 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap'); */
+
+:root {
+	--shiki-color-text: #abb2bf;
+	--shiki-color-background: #1d2128;
+	--shiki-token-constant: #660000;
+	--shiki-token-string: #89ca78;
+	--shiki-token-comment: #880000;
+	--shiki-token-keyword: #990000;
+	--shiki-token-parameter: #aa0000;
+	--shiki-token-function: #d19a66;
+	--shiki-token-string-expression: #ef596f;
+	--shiki-token-punctuation: #dd0000;
+	--shiki-token-link: #ee0000;
+
+	/* ALL COMMON */
+	--page-width: 80rem;
+	--content-width: 1000px;
+	--nav-width: 300px;
+	--toc-width: 0px;
+	--header-height: 4rem;
+	--footer-height: 2rem;
+	--font-family: 'Overpass', sans-serif;
+	--font-family-code: 'JetBrains', monospace;
+	--font-size: 18px;
+	--margin-page: 1rem;
+	--margin-page-mobile: 0.5rem;
+	--padding-page: 1rem;
+	--padding-page-mobile: 0.5rem;
+	--hover-transition: 0.2s ease-in-out;
+
+	--border-radius-s: 0.1rem;
+	--border-radius-m: 0.25rem;
+	--border-radius-l: 0.5rem;
+	--border-radius-xl: 1rem;
+
+	/* colors: https://www.nan.fyi */
+	--colors-gray1: hsl(0, 0%, 8.5%);
+	--colors-gray2: hsl(0, 0%, 11%);
+	--colors-gray3: hsl(0, 0%, 13.6%);
+	--colors-gray4: hsl(0, 0%, 15.8%);
+	--colors-gray5: hsl(0, 0%, 17.9%);
+	--colors-gray6: hsl(0, 0%, 20.5%);
+	--colors-gray7: hsl(0, 0%, 24.3%);
+	--colors-gray8: hsl(0, 0%, 31.2%);
+	--colors-gray9: hsl(0, 0%, 43.9%);
+	--colors-gray10: hsl(0, 0%, 49.4%);
+	--colors-gray11: hsl(0, 0%, 62.8%);
+	--colors-gray12: hsl(0, 0%, 93%);
+	--colors-gray13: hsl(0, 0%, 97%);
+
+	/* TNG COLORS */
+	--tng-blue: #3366cc;
+	--tng-blue-dark: #4455bb;
+	--tng-blue-grey: #6688cc;
+	--tng-red: #882211;
+	--tng-orange: #bb4411;
+
+	/* LIGHT COLORS */
+	--yellow-light: #e5c07b;
+	--darkyellow-light: #d19a66;
+	--lightred-light: #e06c75;
+	--red-light: rgb(244, 71, 71);
+	--darkred-light: #be5046;
+	--lightblue-light: #56b6c2;
+	--blue-light: #61afef;
+	--lightgreen-light: #98c379;
+	--purple-light: #c678dd;
+	--svelte: rgb(255, 62, 0);
+
+	/* DARK COLORS */
+	--yellow-dark: #e5c07b;
+	--darkyellow-dark: #d19a66;
+	--lightred-dark: #ef596f;
+	--red-dark: #f44747;
+	--darkred-dark: #be5046;
+	--lightblue-dark: #2bbac5;
+	--blue-dark: #61afef;
+	--lightgreen-dark: #89ca78;
+	--purple-dark: #d55fde;
+
+	/* LIGHT TEXT & BACKGROUND */
+	--text-light: hsl(226.7, 18.4%, 28.8%);
+	--text-secondary-light: hsl(208.2, 7.3%, 45.7%);
+	--bg-primary-light: hsl(204, 45.5%, 97.8%);
+	--bg-secondary-light: hsl(0, 0%, 100%);
+	--bg-tertiary-light: #545c6f;
+	--border-light: hsl(0, 0%, 87.8%);
+	--shadow-light: 220 3% 15%;
+	--shadow-strength-light: 1%;
+	--bg-primary-light: hsl(216, 28%, 98%);
+	--bg-secondary-light: hsl(215, 22%, 96%);
+	--bg-tertiary-light: hsl(213, 13%, 92%);
+	--border-light: hsl(0, 0%, 90%);
+	--text-light: hsl(200, 15%, 8%);
+	--box-shadow-light: 0px 4px 8px -2px hsla(218, 76%, 15%, 0.25),
+		0px 0px 0px 1px hsla(218, 76%, 15%, 0.08);
+	--box-shadow-after-light: inset 0 1px 1px hsla(0, 0%, 100%, 1);
+
+	/* DARK TEXT & BACKGROUND */
+	--text-dark: hsl(223, 16%, 72%);
+	--text-secondary-dark: hsl(208.2, 7.3%, 45.7%);
+	--bg-primary-dark: hsl(218.2, 26.8%, 8%);
+	--bg-secondary-dark: hsl(222, 16.1%, 12.2%);
+	--bg-tertiary-dark: hsl(222, 14%, 38%);
+	--border-dark: hsl(216, 11.1%, 17.6%);
+	--shadow-dark: 220 40% 2%;
+	--shadow-strength-dark: 25%;
+	--bg-primary-dark: hsl(216, 28%, 7%);
+	--bg-secondary-dark: hsl(215, 22%, 11%);
+	--bg-secondary-dark: hsl(222, 14%, 38%);
+	--bg-tertiary-dark: hsl(213, 13%, 17%);
+	--box-shadow-dark: 0 0 0 1px hsla(0, 0%, 0%, 0.4), 0px 4px 8px -2px hsla(0, 0%, 0%, 0.25),
+		0px 0px 0px 1px hsla(0, 0%, 0%, 0.08);
+	--box-shadow-after-dark: inset 0 1px 1px hsla(0, 0%, 100%, 0.1);
+}
+
+:root[data-theme='dark'] {
+	--text: var(--colors-gray11);
+	--text-secondary: var(--text-secondary-dark);
+
+	--link: var(--tng-blue);
+	--link-hover: var(--tng-blue-grey);
+	--link-visited: var(--tng-blue-dark);
+
+	--bg-primary: var(--colors-gray3);
+	--bg-secondary: var(--colors-gray4);
+	--bg-tertiary: var(--colors-gray2);
+
+	--border: var(--border-dark);
+
+	--shadow: var(--shadow-dark);
+	--shadow-strength: var(--shadow-strength-dark);
+	--box-shadow: var(--box-shadow-dark);
+	--box-shadow-after: var(--box-shadow-after-dark);
+
+	--yellow: var(--yellow-dark);
+	--yellow-dark: var(--yellow-dark);
+	--red-light: var(--lightred-dark);
+	--red: var(--red-dark);
+	--red-dark: var(--darkred-dark);
+	--blue-light: var(--lightblue-dark);
+	--blue: var(--blue-dark);
+	--green-light: var(--lightgreen-dark);
+	--purple: var(--purple-dark);
+}
+
+:root[data-theme='light'] {
+	--text: var(--colors-gray1);
+	--text-secondary: var(--text-secondary-light);
+
+	--link: var(--svelte);
+	--link-hover: var(--tng-orange);
+	--link-visited: var(--tng-red);
+
+	--bg-primary: var(--colors-gray12);
+	--bg-secondary: var(--colors-gray13);
+	--bg-tertiary: var(--colors-gray12);
+
+	--border: var(--border-light);
+
+	--shadow: var(--shadow-light);
+	--shadow-strength: var(--shadow-strength-light);
+	--box-shadow: var(--box-shadow-light);
+	--box-shadow-after: var(--box-shadow-after-light);
+
+	--yellow: var(--yellow-light);
+	--yellow-dark: var(--yellow-light);
+	--red-light: var(--lightred-light);
+	--red: var(--red-light);
+	--red-dark: var(--darkred-light);
+	--blue-light: var(--lightblue-light);
+	--blue: var(--blue-light);
+	--green-light: var(--lightgreen-light);
+	--purple: var(--purple-light);
+}
+
+@font-face {
+	font-family: 'Overpass';
+	src: url('/assets/font/Overpass-Light.woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'JetBrains';
+	src: url('/assets/font/JetBrainsMono/JetBrainsMono-Regular.woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+* {
+	box-sizing: border-box;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+body {
+	color: var(--text);
+	background-color: var(--bg-tertiary);
+	font-family: var(--font-family), sans-serif;
+	/* font-family: 'Nunito', sans-serif; */
+	font-size: var(--font-size);
+	font-weight: 300;
+	line-height: 1.5;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	/* width: 100%; */
+	/* max-width: 60rem; */
+	margin: 0 auto;
+	box-shadow:
+		inset 15px 0 20px -20px var(--link),
+		inset -15px 0 20px -20px var(--link);
+}
+
+/* 
+.notransition * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+} */
+
+a {
+	text-decoration: none;
+	color: var(--link);
+}
+
+a::hover {
+	color: var(--link-visited);
+}
+a:visited {
+	color: var(--link-visited);
+}
+
+button {
+	position: relative;
+	max-width: fit-content;
+	color: var(--link);
+	padding: 0.25rem 0.5rem 0.1rem;
+	margin: 0.75rem;
+	background-color: var(--bg-tertiary);
+	border: none;
+	border-radius: var(--border-radius-s);
+	font-family: var(--font-family), sans-serif;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all var(--hover-transition);
+}
+
+button:hover {
+	color: var(--link-hover);
+}
+/* button:active {
+	transform: translateY(2px);
+} */
+
+button {
+	--color: hsl(15, 100%, 40%);
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	position: relative;
+	isolation: isolate;
+	background-color: transparent;
+}
+
+button::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	/* background-color: var(--link); */
+	border-color: var(--link);
+	inset: 0;
+	scale: 0 1;
+	transform-origin: right;
+	transition: scale 0.45s;
+}
+button:active::before,
+/* button:hover::before, */
+button:focus-visible::before {
+	border-top: 1px solid var(--link);
+	transform-origin: left;
+	scale: 1 1;
+}
+
+.shadow {
+	box-shadow: var(--box-shadow);
+	position: relative;
+	margin-inline: 2px;
+}
+.shadow::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	content: '';
+	border-radius: inherit;
+	box-shadow: var(--box-shadow-after);
+}
+code {
+	font-family: var(--font-family-code), monospace;
+}
+
+code {
+	counter-reset: step;
+	counter-increment: step 0;
+}
+
+code .highlight-line {
+	display: inline-block;
+	background-color: var(--bg-primary);
+	width: calc(100% + 0.7rem);
+	border-left: 0.2rem solid var(--link);
+	margin-left: -0.25rem;
+}
+
+code .line::before {
+	display: inline-block;
+	content: counter(step);
+	counter-increment: step;
+	width: 1.5rem;
+	margin-right: 1.5rem;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+	color: var(--text-secondary);
+}
+
+pre {
+	background-color: var(--bg-secondary);
+	font-size: 0.8rem;
+	/* background-color: var(--bg-tertiary); */
+	border-radius: var(--border-radius-m);
+	padding: 1rem;
+	overflow-x: auto;
+}
+
+:root[data-theme='light'] .shiki.one-dark-pro {
+	display: none;
+}
+:root[data-theme='dark'] .shiki.github-light {
+	display: none;
+}
+
+.shiki {
+	font-family: 'JetBrains';
+	font-size: 0.9rem;
+	line-height: 1.5;
+	overflow: auto;
+	background-color: var(--bg-secondary) !important;
+	padding: 1rem;
+	border-radius: var(--border-radius-m);
+	box-shadow: var(--box-shadow);
+	position: relative;
+	margin-inline: 2px;
+}
+.shiki::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	content: '';
+	border-radius: inherit;
+	box-shadow: var(--box-shadow-after);
+}
