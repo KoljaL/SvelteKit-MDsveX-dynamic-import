@@ -30,11 +30,9 @@ export const load = (async ({ data }) => {
 	// // console.log('+pages.ts ArticleComponent', ArticleComponent);
 
 	// WORKS :-)
-	const StrippedArticlePath2 = ArticlePath.replace('/src/', '../../').replace('.md', '');
+	const ArticlePathStripped = ArticlePath.replace('/src/', '../../').replace('.md', '');
 	const modules = import.meta.glob('../../articles/**/**/+page.md');
-	const ArticleComponent = await modules[`${StrippedArticlePath2}.md`]();
-	// ArticleComponent = ArticleComponent.default;
-	// console.log('+pages.ts modules', module);
+	const ArticleComponent = await modules[`${ArticlePathStripped}.md`]();
 
 	return {
 		data,
