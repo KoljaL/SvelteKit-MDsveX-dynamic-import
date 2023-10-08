@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import '$lib/style/main.css';
+	import DebugBar from '$lib/components/Debug/DebugBar.svelte';
 </script>
 
 <header>
@@ -13,6 +14,8 @@
 <main>
 	<slot />
 </main>
+
+<DebugBar />
 
 <style>
 	header,

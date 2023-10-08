@@ -177,7 +177,8 @@
 
 @font-face {
 	font-family: 'Overpass';
-	src: url('/assets/font/Overpass-Light.woff2');
+	/* src: url('/assets/font/Overpass-Light.woff2'); */
+	src: url('/assets/font/Overpass-Thin.woff2');
 	font-weight: 400;
 	font-style: normal;
 }
